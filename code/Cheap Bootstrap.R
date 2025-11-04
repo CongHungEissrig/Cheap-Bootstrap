@@ -1,12 +1,11 @@
 # Cheap Bootstrap
 
 # Basic Numerical Demonstration
-# Cheap Bootstrap, Basic Bootstrap, Percentile Bootstrap and Standard Error Bootstrap
+# Cheap Bootstrap
 # Estimate a 95% confidence interval of the 0.6 quantile of an exponential distribution with unit rate from iid data
 # n = 100, B = c(1, 2, 5, 10, 50)
 # For each B, we generate synthetic data 1000 times, each time running all the competing methods and outputting the empirical coverage
 # and interval width statistics from the 1000 experimental repetitions
-
 
 set.seed(123)
 n <- 100 
@@ -88,8 +87,8 @@ for (r in 1:R) {
 empirical_coverage <- mean(coverage)
 width_mean <- mean(upper_CBCI - lower_CBCI)
 
-cat(sprintf("Empirical coverage: %.4f\n", empirical_coverage)) # 0.9070 (bei Henry Lam waren es 0.92)
-cat(sprintf("Width Mean: %.4f\n", width_mean)) # 2.4745 (bei Henry Lam waren es 2.42)
+cat(sprintf("Empirical coverage: %.4f\n", empirical_coverage)) # 0.9070 (for Henry Lam it was 0.92)
+cat(sprintf("Width Mean: %.4f\n", width_mean)) # 2.4745 (for Henry Lam it was 2.42)
 
 
 # For B = 1, 2, 5, 10, 50
