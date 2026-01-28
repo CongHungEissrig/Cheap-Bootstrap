@@ -13,7 +13,7 @@ alpha <- 0.05
 # Extreme quantile: p = 0.99
 # -----------------------------
 
-# Normal
+# Normally distributed data 
 res_normal_p99 <- Bootstrap(
   B = B,
   N = N,
@@ -24,9 +24,10 @@ res_normal_p99 <- Bootstrap(
   params = list(mean = 10, sd = 2)
 )
 
+# Save the result
 saveRDS(res_normal_p99, "results/statistics/normal_p99.rds")
 
-# Gamma
+# Gamma distributed data
 res_gamma_p99 <- Bootstrap(
   B = B,
   N = N,
@@ -36,6 +37,8 @@ res_gamma_p99 <- Bootstrap(
   distribution = "gamma",
   params = list(shape = 5, rate = 2)
 )
+
+# Save the result
 saveRDS(res_gamma_p99, "results/statistics/gamma_p99.rds")
 
 
@@ -43,7 +46,7 @@ saveRDS(res_gamma_p99, "results/statistics/gamma_p99.rds")
 # Extreme quantile: p = 0.01
 # -----------------------------
 
-# Normal
+# Normally distributed data 
 res_normal_p01 <- Bootstrap(
   B = B,
   N = N,
@@ -53,9 +56,11 @@ res_normal_p01 <- Bootstrap(
   distribution = "normal",
   params = list(mean = 10, sd = 2)
 )
+
+# Save the result
 saveRDS(res_normal_p01, "results/statistics/normal_p01.rds")
 
-# Gamma
+# Gamma distributed data
 res_gamma_p01 <- Bootstrap(
   B = B,
   N = N,
@@ -66,6 +71,7 @@ res_gamma_p01 <- Bootstrap(
   params = list(shape = 5, rate = 2)
 )
 
+# Save the result
 saveRDS(res_gamma_p01, "results/statistics/gamma_p01.rds")
 
 
@@ -73,7 +79,7 @@ saveRDS(res_gamma_p01, "results/statistics/gamma_p01.rds")
 # Small sample size: data_size = 20
 # -----------------------------
 
-# Normal
+# Normally distributed data 
 res_normal_ds20 <- Bootstrap(
   B = B,
   N = N,
@@ -83,9 +89,11 @@ res_normal_ds20 <- Bootstrap(
   distribution = "normal",
   params = list(mean = 10, sd = 2)
 )
+
+# Save the result
 saveRDS(res_normal_ds20, "results/statistics/normal_ds20.rds")
 
-# Gamma
+# Gamma distributed data
 res_gamma_ds20 <- Bootstrap(
   B = B,
   N = N,
@@ -95,6 +103,8 @@ res_gamma_ds20 <- Bootstrap(
   distribution = "gamma",
   params = list(shape = 5, rate = 2)
 )
+
+# Save the result
 saveRDS(res_gamma_ds20, "results/statistics/gamma_ds20.rds")
 
 
@@ -103,7 +113,7 @@ saveRDS(res_gamma_ds20, "results/statistics/gamma_ds20.rds")
 # Small sample size: data_size = 10
 # -----------------------------
 
-# Normal
+# Normally distributed data 
 res_normal_ds10 <- Bootstrap(
   B = B,
   N = N,
@@ -114,9 +124,10 @@ res_normal_ds10 <- Bootstrap(
   params = list(mean = 10, sd = 2)
 )
 
+# Save the result
 saveRDS(res_normal_ds10, "results/statistics/normal_ds10.rds")
 
-# Gamma
+# Gamma distributed data
 res_gamma_ds10 <- Bootstrap(
   B = B,
   N = N,
@@ -127,6 +138,7 @@ res_gamma_ds10 <- Bootstrap(
   params = list(shape = 5, rate = 2)
 )
 
+# Save the result
 saveRDS(res_gamma_ds10, "results/statistics/gamma_ds10.rds")
 
 

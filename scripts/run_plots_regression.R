@@ -1,21 +1,21 @@
-# ---- Packages ----
+# Packages 
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 
 
-# ---- Source Functions ----
+# Source Function from plot_regression.R to plot the results
 source("R/plot_regression.R")
 
-# ---- Ergebnisse laden ----
+# Load result
 mult_model <- readRDS("results/regression/mult_model.rds") 
 
 betas <- c("beta1", "beta2", "beta3", "beta4", "beta5")
 
-# dir.create("figures/linear_regression/coverage", recursive = TRUE, showWarnings = FALSE)
-# dir.create("figures/linear_regression/width", recursive = TRUE, showWarnings = FALSE)
 
+# Save coverage and width plots for each regression coefficient
 for (b in betas) {
+  
   # Coverage
   cov_plot <- plot_regression_coverage(mult_model, beta = b, alpha = 0.05)
   ggsave(

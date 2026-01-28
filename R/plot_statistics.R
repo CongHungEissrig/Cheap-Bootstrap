@@ -1,7 +1,20 @@
+# =============================================================================
+# Functions: plot_coverage & plot_widths
+# =============================================================================
+# Description:
+# Helper functions to create plots for:
+#   1) Empirical coverage of bootstrap confidence intervals
+#   2) Mean widths of bootstrap confidence intervals
+# =============================================================================
+
+
 plot_coverage <- function(result, alpha) {
+  
+  # Prepare data
   df_coverage <- result$empirical_coverage
   df_coverage$B <- result$B
   
+  # Convert to long format for ggplot
   df_coverage_long <- df_coverage %>% 
     pivot_longer(
       cols = -B,
@@ -10,6 +23,7 @@ plot_coverage <- function(result, alpha) {
       values_to = "coverage"
     )
   
+  # Base plot
   plot <- ggplot(data = df_coverage_long, mapping = aes(x = B, y = coverage, group = method, color = method)) + 
     geom_point(size = 3) +
     geom_line(size = 1.5) +
@@ -32,11 +46,14 @@ plot_coverage <- function(result, alpha) {
       ),
       legend.box.background = element_blank()
     )
+  
+  # Separate plots by statistic
+  
   plot_mean <- plot %+% filter(df_coverage_long, statistic == "mean")
   plot_median <- plot %+% filter(df_coverage_long, statistic == "median")
   plot_quantile <- plot %+% filter(df_coverage_long, statistic == "quantile")
   
-  # Als Liste zurückgeben
+  # Return as list
   return(list(
     mean = plot_mean,
     median = plot_median,
@@ -49,9 +66,11 @@ plot_coverage <- function(result, alpha) {
 
 plot_widths <- function(result) {
   
+  # Prepare data
   df_widths <- result$widths_mean
   df_widths$B <- result$B
   
+  # Convert to long format
   df_widths_long <- df_widths %>% 
     pivot_longer(
       cols = -B,
@@ -59,9 +78,11 @@ plot_widths <- function(result) {
       names_sep = "_", 
       values_to = "widths_mean"
     )
-  # Maximaler Wert über alle Statistiken
+  
+  # Determine max y-value for plot limits
   y_max <- max(df_widths_long$widths_mean, na.rm = TRUE)
   
+  # Base plot
   plot <- ggplot(data = df_widths_long, mapping = aes(x = B, y = widths_mean, group = method, color = method)) + 
     geom_point(size = 3) +
     geom_line(size = 1.5) +
@@ -84,12 +105,12 @@ plot_widths <- function(result) {
       legend.box.background = element_blank()
     ) 
   
-  
+  # Separate plots by statistic
   plot_mean <- plot %+% filter(df_widths_long, statistic == "mean")
   plot_median <- plot %+% filter(df_widths_long, statistic == "median")
   plot_quantile <- plot %+% filter(df_widths_long, statistic == "quantile")
   
-  
+  # Return as list
   return(list(
     mean = plot_mean,
     median = plot_median,

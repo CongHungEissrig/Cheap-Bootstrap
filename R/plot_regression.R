@@ -1,6 +1,17 @@
+# =============================================================================
+# Functions: plot_regression_coverage & plot_regression_widths
+# =============================================================================
+# Description:
+# Helper functions to create plots for a single regression coefficient (beta) 
+# showing:
+#   1) Empirical coverage of bootstrap confidence intervals
+#   2) Mean widths of bootstrap confidence intervals
+# =============================================================================
+
+
 plot_regression_coverage <- function(model, beta = "beta1", alpha = 0.05) {
   
-  # Coverage nur für ein Beta
+  # Extract coverage for the selected coefficient
   df_coverage_beta <- data.frame(
     B = model$cheap$coverage$B,
     Cheap      = model$cheap$coverage[[beta]],
@@ -9,7 +20,7 @@ plot_regression_coverage <- function(model, beta = "beta1", alpha = 0.05) {
     LM         = model$lm$coverage[[beta]]
   )
   
-  # Long format für Bootstrap-Methoden
+  # Convert to long format for ggplot (only bootstrap methods)
   df_coverage_long <- df_coverage_beta %>%
     pivot_longer(
       cols = c("Cheap", "Normal", "Percentile"),
@@ -17,11 +28,11 @@ plot_regression_coverage <- function(model, beta = "beta1", alpha = 0.05) {
       values_to = "coverage"
     )
   
-  # LM-Segmente
+  # Prepare LM horizontal segments as a reference guideline
   lm_segments <- df_coverage_beta %>%
     mutate(xmin = B - 1, xmax = B + 1)
   
-  # Plot
+  # Base plot
   ggplot() +
     geom_point(
       data = df_coverage_long,
@@ -74,7 +85,7 @@ plot_regression_coverage <- function(model, beta = "beta1", alpha = 0.05) {
 
 plot_regression_widths <- function(model, beta = "beta1") {
   
-  # Widths nur für ein Beta
+  # Extract mean interval widths for the selected coefficient
   df_widths_beta <- data.frame(
     B = model$cheap$widths$B,
     Cheap      = model$cheap$widths[[beta]],
@@ -83,7 +94,7 @@ plot_regression_widths <- function(model, beta = "beta1") {
     LM         = model$lm$widths[[beta]]
   )
   
-  # Long format für Bootstrap-Methoden
+  # Convert to long format for ggplot (only bootstrap methods)
   df_widths_long <- df_widths_beta %>%
     pivot_longer(
       cols = c("Cheap", "Normal", "Percentile"),
@@ -91,11 +102,11 @@ plot_regression_widths <- function(model, beta = "beta1") {
       values_to = "width"
     )
   
-  # LM-Segmente
+  # Prepare LM horizontal segments as a reference guideline
   lm_segments <- df_widths_beta %>%
     mutate(xmin = B - 1, xmax = B + 1)
   
-  # Plot
+  # Base Plot
   ggplot() +
     geom_point(
       data = df_widths_long,
