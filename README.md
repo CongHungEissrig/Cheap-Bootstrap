@@ -6,8 +6,8 @@ Overview
 -----------------
 The **Cheap Bootstrap**, introduced by Lam (2022), allows the construction of valid confidence intervals with as few as one bootstrap replication, leading to substantial reductions in computational cost compared to conventional bootstrap approaches such as the normal bootstrap and percentile bootstrap.
 The primary goal of this project is to empirically evaluate the performance of the Cheap Bootstrap intervals in comparison to conventional bootstrap methods, focusing on:
-- **Empirical coverage**
-- **Mean confidence interval width**
+- **Empirical Coverage**
+- **Mean Confidence Interval Width**
   
 The evaluation is conducted using **normally and gamma-distributed data** and considers several parameters, including the **mean**, **median**, and selected **quantiles**. In addition, the performance of the confidence intervals is examined under **small sample sizes**, for **extreme quantiles**, and within **classical multiple linear regression models**.
 
