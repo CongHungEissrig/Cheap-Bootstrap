@@ -103,5 +103,7 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 │           ├── width_beta3.pdf
 │           ├── width_beta4.pdf
 │           └── width_beta5.pdf
+├── thesis/                     # PDF of Bachelor Thesis
+│   └── Bachelor_Thesis_Cheap_Bootstrap.pdf
 └── README.md                   # Project overview and documentation
 ```
