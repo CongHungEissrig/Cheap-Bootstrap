@@ -34,20 +34,20 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 ├── results/                    # Simulation outputs (table of empirical coverage and average interval width)
 │   ├── statistics/             # Results for summary statistics
 │   │   ├── gamma/              # Gamma-distributed data
-│   │   │   ├── gamma.R         # Results for sample size = 100
-│   │   │   ├── gamma_ds10.R    # Results for sample size = 10
-│   │   │   ├── gamma_ds20.R    # Results for sample size = 20
-│   │   │   ├── gamma_p01.R     # Results for 1st percentile
-│   │   │   └── gamma_p99.R     # Results for 99th percentile
+│   │   │   ├── gamma.rds       # Results for sample size = 100
+│   │   │   ├── gamma_ds10.rds  # Results for sample size = 10
+│   │   │   ├── gamma_ds20.rds  # Results for sample size = 20
+│   │   │   ├── gamma_p01.rds   # Results for 1st percentile
+│   │   │   └── gamma_p99.rds   # Results for 99th percentile
 │   │   └── normal/             # Normally distributed data
-│   │       ├── normal.R
-│   │       ├── normal_ds10.R
-│   │       ├── normal_ds20.R   
-│   │       ├── normal_p01.R
-│   │       └── normal_p99.R    
+│   │       ├── normal.rds
+│   │       ├── normal_ds10.rds
+│   │       ├── normal_ds20.rds   
+│   │       ├── normal_p01.rds
+│   │       └── normal_p99.rds   
 │   │
 │   └── regression/             # Results for regression models
-│       └── mult_model.R
+│       └── mult_model.rds
 │              
 ├── figures/                    # Plots of simulation results
 │   ├── coverage/               # Empirical coverage plots
