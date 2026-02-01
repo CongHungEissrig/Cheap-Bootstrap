@@ -75,7 +75,7 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 │   │   │   ├── coverage_normal_median_ds20.pdf
 │   │   │   └── coverage_normal_quantile_ds20.pdf
 │   │   │
-│   │   ├── width/              # Interval width under small sample sizes
+│   │   ├── width/              # Mean Interval width under small sample sizes
 │   │   │   ├── width_gamma_mean_ds20.pdf
 │   │   │   ├── width_gamma_median_ds20.pdf
 │   │   │   ├── width_gamma_quantile_ds20.pdf
@@ -97,7 +97,7 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 │       │   ├── coverage_beta4.pdf
 │       │   └── coverage_beta5.pdf
 │       │
-│       └── width/              # Interval width of regression coefficients
+│       └── width/              # Mean Interval width of regression coefficients
 │           ├── width_beta1.pdf
 │           ├── width_beta2.pdf
 │           ├── width_beta3.pdf
