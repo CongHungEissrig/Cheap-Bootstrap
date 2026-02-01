@@ -34,7 +34,7 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 ├── results/                    # Simulation outputs (table of empirical coverage and average interval width)
 │   ├── statistics/             # Results for summary statistics
 │   │   ├── gamma/              # Gamma-distributed data
-│   │   │   ├── gamma.R
+│   │   │   ├── gamma.R         # Results for sample size = 100
 │   │   │   ├── gamma_ds10.R    # Results for sample size = 10
 │   │   │   ├── gamma_ds20.R    # Results for sample size = 20
 │   │   │   ├── gamma_p01.R     # Results for 1st percentile
