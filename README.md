@@ -27,9 +27,9 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 │   ├── run_statistics.R        # Executes the function in bootstrap_statistics.R on simulated datasets for summary statistics
 │   ├── run_edgecases.R         # Executes the function in bootstrap_statistics.R on simulated datasets for summary statistics under small sample sizes and extreme quantiles
 │   ├── run_regression.R        # Executes the function in bootstrap_regression.R on simulated datasets for regression coefficients
-│   ├── run_plot_statistics.R   # Generates plots using plot_statistics.R for results/ from run_statistics.R
-│   ├── run_plots_edgecases.R   # Generates plots using plot_statistics.R for results/ from run_edgecases.R
-│   └── run_plots_regression.R  # Generates plots using plot_regression.R for results/ from run_regression.R
+│   ├── run_plot_statistics.R   # Generates plots using plot_statistics.R for figures/ from run_statistics.R
+│   ├── run_plots_edgecases.R   # Generates plots using plot_statistics.R for figures/ from run_edgecases.R
+│   └── run_plots_regression.R  # Generates plots using plot_regression.R for figures/ from run_regression.R
 │
 ├── results/                    # Simulation outputs (table of empirical coverage and average interval width)
 │   ├── statistics/             # Results for summary statistics
