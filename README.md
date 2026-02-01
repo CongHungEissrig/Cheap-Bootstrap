@@ -36,15 +36,15 @@ Functions are defined in `R/`, executed in `scripts/`, results are saved in `res
 │   │   ├── gamma/              # Gamma-distributed data
 │   │   │   ├── gamma.R
 │   │   │   ├── gamma_ds10.R    # Results for sample size = 10
-│   │   │   ├── gamma_ds20.R
-│   │   │   ├── gamma_p01.R
+│   │   │   ├── gamma_ds20.R    # Results for sample size = 20
+│   │   │   ├── gamma_p01.R     # Results for 1st percentile
 │   │   │   └── gamma_p99.R     # Results for 99th percentile
 │   │   └── normal/             # Normally distributed data
 │   │       ├── normal.R
 │   │       ├── normal_ds10.R
-│   │       ├── normal_ds20.R   # Results for sample size = 20
+│   │       ├── normal_ds20.R   
 │   │       ├── normal_p01.R
-│   │       └── normal_p99.R    # Results for 99th percentile
+│   │       └── normal_p99.R    
 │   │
 │   └── regression/             # Results for regression models
 │       └── mult_model.R
